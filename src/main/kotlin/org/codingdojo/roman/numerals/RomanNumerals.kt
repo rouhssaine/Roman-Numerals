@@ -2,10 +2,15 @@ package org.codingdojo.roman.numerals
 
 class RomanNumerals {
     fun convert(number: Int): String {
-        if(number == 10) return "X"
         val result = StringBuilder()
-        for (i in 1 .. number) {
+        var remains = number
+        while (remains >= 10) {
+            result.append("X")
+            remains -= 10
+        }
+        while (remains >= 1) {
             result.append("I")
+            remains -= 1
         }
         return result.toString()
     }
