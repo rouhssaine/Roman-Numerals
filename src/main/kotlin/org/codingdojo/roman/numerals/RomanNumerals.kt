@@ -2,8 +2,11 @@ package org.codingdojo.roman.numerals
 
 class RomanNumerals {
     fun convert(number: Int): String {
-        if(number == 1) return "I"
-        return "II"
+        val result = StringBuilder()
+        for (i in 1 .. number) {
+            result.append("I")
+        }
+        return result.toString()
     }
 
 }

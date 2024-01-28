@@ -8,10 +8,12 @@ class RomanNumeralsTest {
 
     @ParameterizedTest(name = "should convert {0} to {1}")
     @CsvSource(
+        delimiter = '➔',
         value = [
             "1 ➔ I",
-            "2 ➔ II"
-        ], delimiter = '➔'
+            "2 ➔ II",
+            "3 ➔ III"
+        ]
     )
     fun should_convert(number: Int, romanNumber: String) {
         RomanNumerals().convert(number) `should be equal to` romanNumber;
