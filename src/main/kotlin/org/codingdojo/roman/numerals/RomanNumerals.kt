@@ -8,6 +8,10 @@ class RomanNumerals {
             result.append("X")
             remains -= 10
         }
+        while (remains >= 5) {
+            result.append("V")
+            remains -= 5
+        }
         while (remains >= 1) {
             result.append("I")
             remains -= 1
