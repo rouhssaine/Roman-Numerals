@@ -1,22 +1,27 @@
 package org.codingdojo.roman.numerals
 
 class RomanNumerals {
+
     fun convert(number: Int): String {
         val result = StringBuilder()
         var remains = number
-        while (remains >= 10) {
-            result.append("X")
-            remains -= 10
-        }
-        while (remains >= 5) {
-            result.append("V")
-            remains -= 5
-        }
-        while (remains >= 1) {
-            result.append("I")
-            remains -= 1
-        }
+
+        enumValues<RomanNumeral>()
+            .sortedByDescending { it.number }
+            .forEach {
+                while (remains >= it.number) {
+                    result.append(it.name)
+                    remains -= it.number
+                }
+            }
+
         return result.toString()
+    }
+
+    enum class RomanNumeral(val number: Int) {
+        I(1),
+        V(5),
+        X(10)
     }
 
 }
