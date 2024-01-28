@@ -20,6 +20,7 @@ class RomanNumerals {
 
     enum class RomanNumeral(val number: Int) {
         I(1),
+        IV(4),
         V(5),
         X(10)
     }
