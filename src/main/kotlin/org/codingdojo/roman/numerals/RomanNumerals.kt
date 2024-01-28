@@ -1,8 +1,9 @@
 package org.codingdojo.roman.numerals
 
 class RomanNumerals {
-    fun convert(i: Int): String {
-        return "I";
+    fun convert(number: Int): String {
+        if(number == 1) return "I"
+        return "II"
     }
 
 }
