@@ -12,7 +12,8 @@ class RomanNumeralsTest {
         value = [
             "1 ➔ I",
             "2 ➔ II",
-            "3 ➔ III"
+            "3 ➔ III",
+            "10 ➔ X"
         ]
     )
     fun should_convert(number: Int, romanNumber: String) {
